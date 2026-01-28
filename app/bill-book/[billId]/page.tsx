@@ -23,25 +23,36 @@ export default async function BillDetailPage({ params }: { params: Promise<{ bil
         <Link href="/bill-book" className="flex items-center text-slate-500 hover:text-slate-900 transition-colors">
           <ArrowLeft size={20} className="mr-2" /> Back to Bill Book
         </Link>
-        <button 
+        <button
           className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors print:hidden"
-          // In a real app, onClick window.print(), but this is a server component button (cannot have onClick).
-          // We would make a Client Component wrapper or just a form/link.
-          // For simplicity, we just show the layout effectively.
+        // In a real app, onClick window.print(), but this is a server component button (cannot have onClick).
+        // We would make a Client Component wrapper or just a form/link.
+        // For simplicity, we just show the layout effectively.
         >
           <Printer size={16} /> Print Bill
         </button>
       </div>
 
       <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200 print:shadow-none print:border-0">
-        <div className="flex justify-between items-start mb-12">
+        <div className="flex justify-between items-start mb-8 border-b border-slate-100 pb-8">
           <div>
-            <h1 className="text-3xl font-bold text-slate-900">INVOICE</h1>
-            <p className="text-slate-500 mt-1">#{bill.id}</p>
+            <h1 className="text-2xl font-bold text-slate-900 uppercase tracking-wide">Aakhanksha Apparels</h1>
+            <p className="text-sm text-slate-500 mt-2 max-w-xs leading-relaxed">
+              #11-9-5, opp. HP Petrol Pump,<br />
+              Near Mahaaxmi Theater, SBI Colony,<br />
+              Kothapet
+            </p>
+            <p className="text-sm text-slate-500 mt-1">
+              <span className="font-medium">Cell:</span> 9390797939, 9392912616
+            </p>
+            <p className="text-sm text-slate-500 mt-1">
+              <span className="font-medium">GSTIN:</span> 36AKAPB3470B1ZW
+            </p>
           </div>
           <div className="text-right">
-            <p className="text-sm text-slate-500 mb-1">Date</p>
-            <p className="font-medium text-slate-900">
+            <h2 className="text-3xl font-bold text-slate-200 uppercase">Invoice</h2>
+            <p className="font-medium text-slate-900 mt-2">#{bill.id.slice(-6).toUpperCase()}</p>
+            <p className="text-sm text-slate-500 mt-1">
               {new Date(bill.createdAt).toLocaleDateString('en-IN', {
                 year: 'numeric',
                 month: 'long',
