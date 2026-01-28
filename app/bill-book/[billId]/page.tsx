@@ -36,6 +36,7 @@ export default async function BillDetailPage({ params }: { params: Promise<{ bil
       <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200 print:shadow-none print:border-0">
         <div className="flex justify-between items-start mb-8 border-b border-slate-100 pb-8">
           <div>
+            <div className="text-4xl font-extrabold text-slate-900 mb-2">RAMP</div>
             <h1 className="text-2xl font-bold text-slate-900 uppercase tracking-wide">Aakhanksha Apparels</h1>
             <p className="text-sm text-slate-500 mt-2 max-w-xs leading-relaxed">
               #11-9-5, opp. HP Petrol Pump,<br />
